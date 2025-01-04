@@ -1,0 +1,59 @@
+#:schema https://schema.dojang.dev/2023-11/manifest.schema.json
+
+[dirs.AppData]
+posix = "${XDG_CONFIG_HOME:-$HOME/.config}"
+windows = "$AppData"
+
+[dirs."Application Support"]
+linux = "${XDG_CONFIG_HOME:-$HOME/.config}"
+macos = "$HOME/Library/Application Support"
+windows = "$AppData"
+
+[dirs.HOME]
+posix = "$HOME"
+windows = "$UserProfile"
+
+[dirs.XDG_CONFIG_HOME]
+posix = "${XDG_CONFIG_HOME:-$HOME/.config}"
+windows = "${XDG_CONFIG_HOME:-$UserProfile/.config}"
+
+[files]
+
+[ignores]
+AppData = ["*"]
+"Application Support" = ["*"]
+HOME = ["*"]
+XDG_CONFIG_HOME = ["*"]
+
+[monikers]
+linux.os = "linux"
+macos.os = "macos"
+posix.os = ["linux", "macos"]
+windows.os = "windows"
+
+[monikers.linux-amd64]
+arch = "x86_64"
+os = "linux"
+
+[monikers.linux-arm64]
+arch = "aarch64"
+os = "linux"
+
+[monikers.linux-wsl]
+os = "linux"
+when = "kernel-release $= \"-microsoft-standard-WSL2\""
+
+[monikers.windows-amd64]
+arch = "x86_64"
+os = "windows"
+
+[monikers.windows-arm64]
+arch = "aarch64"
+os = "windows"
+
+[files."gitconfig/.gitconfig.macos"]
+macos = "$HOME/.gitconfig"
+
+[files."gitconfig/.gitconfig_common"]
+posix = "$HOME/.gitconfig_common"
+

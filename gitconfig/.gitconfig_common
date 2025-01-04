@@ -1,0 +1,41 @@
+[include]
+	path = ~/.gitconfig_extra
+
+[user]
+	name = Lee Dogeon 
+	useConfigOnly = true
+	signingkey = A6FBB8C59908DE9D
+[color]
+	ui = auto
+[alias]
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	f = fetch --tags --all -p
+	ci = commit
+	co = switch --create
+	st = status --short --branch
+[log]
+	date = iso8601
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+	pager = delta
+	fsmonitor = true
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true  # use n and N to move between diff sections
+[merge]
+	conflictStyle = diff3
+[diff]
+	colorMoved = default
+
+# vim: set noet sw=2 ts=2 sts=2 ft=gitconfig ff=unix:
+
