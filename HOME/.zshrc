@@ -15,6 +15,8 @@ alias gs="git status"
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
+export GPG_TTY=$(tty)
+
 function replace-all() {
   old="$1"
   if [[ "$2" = "" ]]; then
