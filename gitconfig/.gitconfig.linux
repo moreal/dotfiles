@@ -1,0 +1,13 @@
+[include]
+    path = ~/.gitconfig_common
+
+[user]
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILRWFABf/dpL5zOkRweLMlVwp2FaUumbMLT2/5bW15ct
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = "/opt/1Password/op-ssh-sign"
+
+# vim: set noet sw=2 ts=2 sts=2 ft=gitconfig:

@@ -54,6 +54,8 @@ os = "windows"
 [files."gitconfig/.gitconfig.macos"]
 macos = "$HOME/.gitconfig"
 
+[files."gitconfig/.gitconfig.linux"]
+linux = "$HOME/.gitconfig"
+
 [files."gitconfig/.gitconfig_common"]
 posix = "$HOME/.gitconfig_common"
-
