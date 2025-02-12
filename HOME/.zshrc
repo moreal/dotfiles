@@ -39,3 +39,28 @@ replaced_lines=[x.replace(old, new) for x in lines]
 sys.stdout.write("".join(replaced_lines))
 ' "$old" "$new"
 }
+
+function fetch-next-data() {
+  url="$1"
+  hostname=$(echo "$url" | sed -E 's|https?://([^/]+).*|\1|')
+
+  echo 'import { DOMParser } from "jsr:@b-fuze/deno-dom@^0.1.49";
+import { Command } from "jsr:@cliffy/command@^1.0.0-rc.7";
+
+await new Command()
+  .name("fetch-next-data")
+  .description("A CLI to fetch __NEXT_DATA__ data.")
+  .version("v0.0.0")
+  .arguments("<url>")
+  .action(async ({}, url) => {
+    const resp = await fetch(url);
+    const respText = await resp.text();
+
+    const doc = new DOMParser().parseFromString(respText, "text/html");
+
+    const nextData = doc.querySelector("script[id=__NEXT_DATA__]")!;
+    console.log(nextData.innerText);
+  })
+  .parse();
+' | deno run --allow-net="$hostname" - "$1"
+}
