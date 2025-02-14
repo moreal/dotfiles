@@ -64,3 +64,7 @@ await new Command()
   .parse();
 ' | deno run --allow-net="$hostname" - "$1"
 }
+
+function urldecode() {
+  python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()));"
+}
