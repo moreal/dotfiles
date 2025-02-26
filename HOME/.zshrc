@@ -4,6 +4,7 @@ export LDFLAGS="-L/opt/homebrew/opt/node@22/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/node@22/include"
 
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/smlnj/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
