@@ -9,6 +9,7 @@ export PATH="/usr/local/smlnj/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 alias vim=nvim
 alias gvim=nvim
