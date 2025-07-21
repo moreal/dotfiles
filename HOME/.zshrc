@@ -11,48 +11,9 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-alias vim=nvim
-alias gvim=nvim
-alias gs="git status"
-
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
 export GPG_TTY=$(tty)
-
-function replace-all() {
-  old="$1"
-  if [[ "$2" = "" ]]; then
-    new=''
-  else
-    new="$2"
-  fi
-
-  set -e
-  
-  python3 -c '
-import sys;
-
-old=sys.argv[1]
-new=sys.argv[2]
-
-lines=sys.stdin.readlines()
-replaced_lines=[x.replace(old, new) for x in lines]
-
-sys.stdout.write("".join(replaced_lines))
-' "$old" "$new"
-}
-
-function fetch-script-data() {
-  url="$1"
-  hostname=$(echo "$url" | sed -E 's|https?://([^/]+).*|\1|')
-
-  deno run --allow-net="$hostname" ./.deno-scripts/fetch-script-data.ts "$1" "$2"
-}
-
-function urldecode() {
-  python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.stdin.read()));"
-}
-
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
@@ -61,6 +22,9 @@ function urldecode() {
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/moreal/.opam/opam-init/init.zsh' ]] || source '/Users/moreal/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
-function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
 
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+
+source ./.utilfunc/python.sh
+source ./.utilfunc/deno.sh
+source ./.utilfunc/git.sh
