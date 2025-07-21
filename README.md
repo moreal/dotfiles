@@ -11,3 +11,8 @@ brew install --cask dahlia/dojang/dojang
 dojang apply
 ```
 
+## Note
+
+```
+git config core.hooksPath hooks
+```
