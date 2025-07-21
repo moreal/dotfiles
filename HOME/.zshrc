@@ -61,3 +61,6 @@ function urldecode() {
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/moreal/.opam/opam-init/init.zsh' ]] || source '/Users/moreal/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
