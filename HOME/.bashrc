@@ -125,4 +125,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$HOME/.local/bin:$PATH
 
 # Haskell
-[ -f "/home/moreal/.ghcup/env" ] && . "/home/moreal/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
