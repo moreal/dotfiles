@@ -28,3 +28,4 @@ export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 source ./.utilfunc/python.sh
 source ./.utilfunc/deno.sh
 source ./.utilfunc/git.sh
+eval "$(mise activate zsh)"
