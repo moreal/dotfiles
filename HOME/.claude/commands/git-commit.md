@@ -1,0 +1,2 @@
+Please make a commit for the currently staged changes with an appropriate commit message. The first line of the commit message should be short and concise.Please make a commit with an appropriate commit message for the currently staged changes.  The first line of the commit message should be short and concise, followed by a blank line and then a more detailed description if necessary.  Don't put "🤖 Generated with [Claude Code](https://claude.ai/code)" in the commit message, but you can put "Co-Authored-By: Claude <noreply@anthropic.com>" at the end if you like.
+
