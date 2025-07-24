@@ -25,7 +25,7 @@ export GPG_TTY=$(tty)
 
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
-source ./.utilfunc/python.sh
-source ./.utilfunc/deno.sh
-source ./.utilfunc/git.sh
+source $HOME/.utilfunc/python.sh
+source $HOME/.utilfunc/deno.sh
+source $HOME/.utilfunc/git.sh
 eval "$(mise activate zsh)"
