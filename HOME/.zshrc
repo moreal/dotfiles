@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 autoload -Uz compinit && compinit
 
 export LDFLAGS="-L/opt/homebrew/opt/node@22/lib"
@@ -13,21 +14,26 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH
 #   - auto-completion for the opam binary
 # This section can be safely removed at any time if needed.
+# shellcheck source=/dev/null
 [[ ! -r '/Users/moreal/.opam/opam-init/init.zsh' ]] || source '/Users/moreal/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
 
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
-source $HOME/.utilfunc/python.sh
-source $HOME/.utilfunc/deno.sh
-source $HOME/.utilfunc/git.sh
+# shellcheck source=/dev/null
+source "$HOME/.utilfunc/python.sh"
+# shellcheck source=/dev/null
+source "$HOME/.utilfunc/deno.sh"
+# shellcheck source=/dev/null
+source "$HOME/.utilfunc/git.sh"
 eval "$(mise activate zsh)"
 
 # Added by LM Studio CLI (lms)

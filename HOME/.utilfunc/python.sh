@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 function replace-all() {
   old="$1"

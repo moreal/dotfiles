@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 function fetch-script-data() {
   url="$1"
   hostname=$(echo "$url" | sed -E 's|https?://([^/]+).*|\1|')
