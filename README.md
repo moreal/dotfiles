@@ -13,6 +13,16 @@ dojang apply
 
 ## Note
 
+Install Git hooks (e.g., pre-commit):
+
 ```
 git config core.hooksPath hooks
 ```
+
+Reflect files:
+
+```
+dojang reflect -f <PATH>
+# dojang reflect -f $HOME/.bashrc
+```
+
