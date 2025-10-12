@@ -29,3 +29,8 @@ source $HOME/.utilfunc/python.sh
 source $HOME/.utilfunc/deno.sh
 source $HOME/.utilfunc/git.sh
 eval "$(mise activate zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/moreal/.lmstudio/bin"
+# End of LM Studio CLI section
+

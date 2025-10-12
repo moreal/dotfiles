@@ -126,3 +126,8 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Haskell
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/moreal/.lmstudio/bin"
+# End of LM Studio CLI section
+
