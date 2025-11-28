@@ -26,3 +26,4 @@ dojang reflect -f <PATH>
 # dojang reflect -f $HOME/.bashrc
 ```
 
+When installing from Homebrew, let's use `brew bundle add <name>` to record in Brewfile.
