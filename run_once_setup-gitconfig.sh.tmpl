@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Setup OS-specific gitconfig
+{{ if eq .chezmoi.os "darwin" -}}
+ln -sf ~/.gitconfig.macos ~/.gitconfig
+{{ else if eq .chezmoi.os "linux" -}}
+ln -sf ~/.gitconfig.linux ~/.gitconfig
+{{ end -}}

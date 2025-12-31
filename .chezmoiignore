@@ -1,0 +1,17 @@
+README.md
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+WARP.md
+.cursorrules
+.windsurfrules
+hooks/
+.github/
+.gitignore
+
+# OS-specific gitconfig files - managed by run_once script
+{{ if eq .chezmoi.os "darwin" }}
+.gitconfig.linux
+{{ else if eq .chezmoi.os "linux" }}
+.gitconfig.macos
+{{ end }}

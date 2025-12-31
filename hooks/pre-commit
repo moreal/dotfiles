@@ -1,6 +1,6 @@
 #!/bin/bash
 
-shellcheck ./HOME/.bashrc ./HOME/.utilfunc/*.sh
+shellcheck ./dot_bashrc ./dot_utilfunc/*.sh
 
 # NOTE: Shellcheck only supports sh/bash/dash/ksh/'busybox sh' scripts.
 # shellcheck ./HOME/.zshrc
