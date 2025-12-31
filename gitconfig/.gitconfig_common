@@ -13,6 +13,7 @@
 	ci = commit
 	co = switch --create
 	st = status --short --branch
+	up = pull --rebase --autostash
 [log]
 	date = iso8601
 [core]
