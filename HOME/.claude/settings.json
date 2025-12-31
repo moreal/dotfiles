@@ -13,7 +13,7 @@
     ]
   },
   "model": "opus",
-  "statusLine": {
+  "statusline": {
     "type": "command",
     "command": "bash ~/.claude/statusline.sh"
   }
