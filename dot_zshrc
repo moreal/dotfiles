@@ -41,3 +41,7 @@ eval "$(mise activate zsh)"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/moreal/.lmstudio/bin"
 # End of LM Studio CLI section
+
+if [[ $(uname) == "Darwin" ]]; then
+    export XDG_CONFIG_HOME="$HOME/.config"
+fi
