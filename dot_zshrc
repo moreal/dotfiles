@@ -45,3 +45,6 @@ export PATH="$PATH:/Users/moreal/.lmstudio/bin"
 if [[ $(uname) == "Darwin" ]]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
+
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+

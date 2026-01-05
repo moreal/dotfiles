@@ -143,3 +143,4 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH="$PATH:/Users/moreal/.lmstudio/bin"
 # End of LM Studio CLI section
 
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
