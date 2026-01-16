@@ -2,7 +2,8 @@
 	path = ~/.gitconfig_extra
 
 [user]
-	name = Lee Dogeon 
+	name = Lee Dogeon
+	email = dev.moreal@gmail.com
 	useConfigOnly = true
 	signingkey = A6FBB8C59908DE9D
 [color]
@@ -39,4 +40,3 @@
 	colorMoved = default
 
 # vim: set noet sw=2 ts=2 sts=2 ft=gitconfig ff=unix:
-
