@@ -1,4 +1,6 @@
 {
+  "model": "opus",
+  "editor": "vim",
   "hooks": {
     "Notification": [
       {
@@ -12,7 +14,6 @@
       }
     ]
   },
-  "model": "opus",
   "statusline": {
     "type": "command",
     "command": "bash ~/.claude/statusline.sh"
