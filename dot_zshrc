@@ -10,7 +10,7 @@ export PATH="/usr/local/smlnj/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
@@ -47,4 +47,3 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
-
