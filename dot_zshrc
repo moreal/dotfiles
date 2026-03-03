@@ -47,3 +47,5 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
+
+alias ccc='CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude'
