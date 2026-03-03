@@ -171,3 +171,5 @@ cask "font-pretendard"
 tap "simnalamburt/x"
 brew "simnalamburt/x/input-source"
 cask "codex"
+brew "lima"
+
