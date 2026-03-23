@@ -35,4 +35,7 @@
 	external = difft
 	colorMoved = default
 
+[url "git@github.com:"]
+    pushInsteadOf = https://github.com/
+
 # vim: set noet sw=2 ts=2 sts=2 ft=gitconfig ff=unix:
