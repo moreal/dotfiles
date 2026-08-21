@@ -5,3 +5,14 @@
 	path = /opt/homebrew/bin/gpg
 
 # vim: set noet sw=2 ts=2 sts=2 ft=gitconfig:
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

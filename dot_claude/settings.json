@@ -1,6 +1,5 @@
 {
-  "model": "opus",
-  "editor": "vim",
+  "model": "fable",
   "hooks": {
     "Notification": [
       {
@@ -14,6 +13,30 @@
       }
     ]
   },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": false,
+    "chrome-devtools-mcp@claude-plugins-official": false,
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "editor": "vim",
   "statusline": {
     "type": "command",
     "command": "bash ~/.claude/statusline.sh"

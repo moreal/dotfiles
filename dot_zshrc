@@ -11,6 +11,7 @@ export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.ghcup/bin:$PATH"
 
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
 
@@ -49,3 +50,10 @@ fi
 command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 alias ccc='CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude'
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(./hooks/pre-commit)"
+      "Bash(./hooks/pre-commit)",
+      "WebFetch(domain:www.chezmoi.io)",
+      "WebFetch(domain:github.com)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []
