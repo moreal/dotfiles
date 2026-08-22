@@ -51,6 +51,9 @@ command -v direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 alias ccc='CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude'
 
+# Langfuse credentials for claude/codex/opencode/pi tracing (not tracked by chezmoi)
+[ -f "$HOME/.config/langfuse/env" ] && source "$HOME/.config/langfuse/env"
+
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'

@@ -15,3 +15,8 @@ hooks/
 {{ else if eq .chezmoi.os "linux" }}
 .gitconfig.macos
 {{ end }}
+
+# Local secrets - never track, even via a bulk `chezmoi add`
+.config/langfuse
+.config/opencode/opencode-langfuse.json
+.codex/langfuse.json
