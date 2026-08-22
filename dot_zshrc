@@ -64,5 +64,6 @@ alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 ## Claude aliases
 alias sonnet="claude --model sonnet"
 alias opus="claude --model opus"
+alias fable="claude --model fable"
 alias opusplan="claude --model opusplan"
 alias fableplan='ANTHROPIC_DEFAULT_OPUS_MODEL=claude-fable-5 ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-5 claude --model opusplan'
