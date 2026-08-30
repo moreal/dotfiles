@@ -174,6 +174,9 @@ hide_rate_limit_model_nudge = true
 command = "npx"
 args = ["chrome-devtools-mcp@latest"]
 
+[mcp_servers.codspeed]
+url = "https://mcp.codspeed.io/mcp"
+
 [mcp_servers.node_repl]
 args = []
 command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
