@@ -175,7 +175,9 @@ command = "npx"
 args = ["chrome-devtools-mcp@latest"]
 
 [mcp_servers.codspeed]
-url = "https://mcp.codspeed.io/mcp"
+command = "npx"
+args = ["-y", "mcp-remote@0.8.2", "https://mcp.codspeed.io/mcp", "--transport", "http-only", "--host", "127.0.0.1"]
+startup_timeout_sec = 120
 
 [mcp_servers.node_repl]
 args = []
