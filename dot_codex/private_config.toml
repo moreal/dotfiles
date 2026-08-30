@@ -8,7 +8,7 @@ Use the exact active model ID supplied by the model-identity hook. Never abbrevi
 
 personality = "pragmatic"
 model = "gpt-5.6-sol"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "high"
 model_context_window = 500000
 model_auto_compact_token_limit = 420000
 plan_mode_reasoning_effort = "xhigh"
@@ -149,6 +149,21 @@ trust_level = "trusted"
 [projects."/Users/moreal/github/moreal/rxui"]
 trust_level = "trusted"
 
+[projects."/Users/moreal/Library/Application Support/orca/rate-limit-pty-cwd"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/korean-readings"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/blog"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/Nebu1eto/choco-pi"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/homelab"]
+trust_level = "trusted"
+
 [notice]
 hide_rate_limit_model_nudge = true
 
@@ -176,14 +191,18 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunc
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.818.31338"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/moreal/.codex/plugins/cache/openai-bundled/browser/26.818.31338/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.825.41651"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/moreal/.codex/plugins/cache/openai-bundled/browser/26.825.41651/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
 args = ["mcp"]
 cwd = "."
+enabled = false
+
+[mcp_servers.cua_repl]
+command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
 enabled = false
 
 [plugins."github@openai-curated"]
@@ -222,17 +241,20 @@ enabled = true
 [plugins."tracing@codex-observability-plugin"]
 enabled = true
 
+[plugins."superpowers@openai-curated"]
+enabled = true
+
 [marketplaces.openai-bundled]
 source_type = "local"
 source = "/Users/moreal/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-08-21T12:47:55Z"
 source_type = "local"
 source = "/Users/moreal/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.codex-observability-plugin]
-last_updated = "2026-08-22T08:56:31Z"
+last_updated = "2026-08-22T09:14:55Z"
+last_revision = "05a3918e5f4c3cf74a4629e0583bf224d1af30f2"
 source_type = "git"
 source = "https://github.com/langfuse/codex-observability-plugin.git"
 
@@ -244,6 +266,7 @@ source = "https://github.com/langfuse/codex-observability-plugin.git"
 selected-avatar-id = "rocky"
 followUpQueueMode = "queue"
 dock-icon-preference = "codex-system"
+keepRemoteControlAwakeWhilePluggedIn = true
 
 [desktop.open-in-target-preferences]
 global = "ghostty"
@@ -259,8 +282,12 @@ NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7fe0e1c59da4bc68f9d6ab81ae8d349b53fe
 
 [hooks.state."/Users/moreal/.codex/hooks.json:session_start:0:0"]
 trusted_hash = "sha256:da4f236a1a4996b37d322d9d6c00ea7049b9f92057d352f9ac3683c305314121"
-enabled = true
+enabled = false
 
 [hooks.state."/Users/moreal/.codex/hooks.json:user_prompt_submit:0:0"]
 trusted_hash = "sha256:5fea99364326650a17b2c006a8d2d356533d3f8072f899a2d82229c93459d128"
+enabled = true
+
+[hooks.state."tracing@codex-observability-plugin:hooks/hooks.json:stop:0:0"]
+trusted_hash = "sha256:629e7067ebf173b0cd4546740a41f87ec0e34a6dbd99ab224828b74642489cce"
 enabled = true

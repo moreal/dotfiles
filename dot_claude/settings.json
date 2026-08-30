@@ -1,5 +1,5 @@
 {
-  "model": "fable",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -14,7 +14,7 @@
     ]
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": true,
     "chrome-devtools-mcp@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": false,
     "codex@openai-codex": true,
@@ -40,13 +40,14 @@
       }
     }
   },
-  "effortLevel": "xhigh",
-  "tui": "fullscreen",
-  "skipWorkflowUsageWarning": true,
-  "editor": "vim",
-  "statusline": {
-    "type": "command",
-    "command": "bash ~/.claude/statusline.sh"
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-fable-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5": {
+      "effortLevel": "xhigh"
+    }
   },
   "pluginConfigs": {
     "langfuse-observability@langfuse-observability": {
@@ -55,5 +56,13 @@
         "LANGFUSE_BASE_URL": "https://langfuse.home.moreal.dev"
       }
     }
+  },
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "agentPushNotifEnabled": true,
+  "editor": "vim",
+  "statusline": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh"
   }
 }
