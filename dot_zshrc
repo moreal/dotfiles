@@ -37,6 +37,8 @@ source "$HOME/.utilfunc/deno.sh"
 source "$HOME/.utilfunc/llm.sh"
 # shellcheck source=/dev/null
 source "$HOME/.utilfunc/git.sh"
+# shellcheck source=/dev/null
+source "$HOME/.utilfunc/brew.sh"
 eval "$(mise activate zsh)"
 
 # Added by LM Studio CLI (lms)
