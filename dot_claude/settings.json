@@ -48,6 +48,12 @@
     },
     "claude-opus-5": {
       "effortLevel": "xhigh"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
     }
   },
   "pluginConfigs": {
@@ -59,6 +65,7 @@
     }
   },
   "tui": "fullscreen",
+  "remoteControlAtStartup": false,
   "skipWorkflowUsageWarning": true,
   "agentPushNotifEnabled": true,
   "editor": "vim",
