@@ -7,8 +7,8 @@ Use the exact active model ID supplied by the model-identity hook. Never abbrevi
 """
 
 personality = "pragmatic"
-model = "gpt-5.6-sol"
-model_reasoning_effort = "high"
+model = "gpt-6.1-sol"
+model_reasoning_effort = "low"
 model_context_window = 500000
 model_auto_compact_token_limit = 420000
 plan_mode_reasoning_effort = "xhigh"
@@ -16,6 +16,8 @@ service_tier = "default"
 
 notify = ["/Users/moreal/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 approvals_reviewer = "auto_review"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
 
 [features]
 multi_agent = true
@@ -164,6 +166,51 @@ trust_level = "trusted"
 [projects."/Users/moreal/github/moreal/homelab"]
 trust_level = "trusted"
 
+[projects."/Users/moreal/github/moreal/mymymy"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/Documents/Codex/2026-09-06/realtime-voice-chat"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/pubnyan-live"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/kimino"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/dreamhack-sandbox"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/hackers-pub/pubnyan-live"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/yeokja/yeokja"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/korean-eval"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/limeburst/eunha"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/gitify-native"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/finds.team"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/exp-helper"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/maxgoedjen/secretive"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/Documents/ChatGPT/Invetigate macOS error"]
+trust_level = "trusted"
+
+[projects."/Users/moreal/github/moreal/security-agent"]
+trust_level = "trusted"
+
 [notice]
 hide_rate_limit_model_nudge = true
 
@@ -185,24 +232,21 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/moreal/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "/Users/moreal/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_TINYSKY_ENABLED = "0"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.825.41651"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/moreal/.codex/plugins/cache/openai-bundled/browser/26.825.41651/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+BROWSER_USE_CODEX_APP_VERSION = "26.928.20755"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/moreal/.codex/plugins/cache/openai-bundled/browser/26.928.20755/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/moreal/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
 args = ["mcp"]
 cwd = "."
-enabled = false
-
-[mcp_servers.cua_repl]
-command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
 enabled = false
 
 [plugins."github@openai-curated"]
@@ -226,9 +270,6 @@ enabled = true
 [plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
-[plugins."sites@openai-bundled"]
-enabled = true
-
 [plugins."visualize@openai-bundled"]
 enabled = true
 
@@ -242,6 +283,15 @@ enabled = true
 enabled = true
 
 [plugins."superpowers@openai-curated"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
 enabled = true
 
 [marketplaces.openai-bundled]
@@ -258,15 +308,21 @@ last_revision = "05a3918e5f4c3cf74a4629e0583bf224d1af30f2"
 source_type = "git"
 source = "https://github.com/langfuse/codex-observability-plugin.git"
 
+[tui]
+screen_reader_detection_done = true
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
+gpt-6-astra = 4
+"gpt-6.1-sol" = 1
 
 [desktop]
-selected-avatar-id = "rocky"
+selected-avatar-id = "pet_6abc315503d88191b65c3f81e5828ef1"
 followUpQueueMode = "queue"
 dock-icon-preference = "codex-system"
 keepRemoteControlAwakeWhilePluggedIn = true
+avatar-overlay-mascot-width-px = 224
 
 [desktop.open-in-target-preferences]
 global = "ghostty"
@@ -289,5 +345,9 @@ trusted_hash = "sha256:5fea99364326650a17b2c006a8d2d356533d3f8072f899a2d82229c93
 enabled = true
 
 [hooks.state."tracing@codex-observability-plugin:hooks/hooks.json:stop:0:0"]
-trusted_hash = "sha256:629e7067ebf173b0cd4546740a41f87ec0e34a6dbd99ab224828b74642489cce"
+trusted_hash = "sha256:69a05cbfa6984ec5f1433343b45480d5239c119e7332ae863f9865edc2efec74"
 enabled = true
+
+[[skills.config]]
+path = "/Users/moreal/.codex/skills/hatch-pet/SKILL.md"
+enabled = false

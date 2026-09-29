@@ -1,5 +1,4 @@
 {
-  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -64,8 +63,8 @@
     }
   },
   "tui": "fullscreen",
-  "remoteControlAtStartup": false,
   "skipWorkflowUsageWarning": true,
+  "remoteControlAtStartup": false,
   "agentPushNotifEnabled": true,
   "editor": "vim",
   "statusline": {
