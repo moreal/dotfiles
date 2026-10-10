@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+
+# Private agent catalogs and source bundles belong only on this machine.
+.agents/
+dot_agents/*
+!dot_agents/agents.public.toml
+!dot_agents/client-state.public.json
+!dot_agents/plugin-sources/
+dot_agents/plugin-sources/*
+!dot_agents/plugin-sources/superpowers/
+!dot_agents/plugin-sources/chrome-devtools-mcp/
+private_dot_agents/
+dot_claude/skills/
+private_dot_claude/skills/
+dot_codex/skills/
+private_dot_codex/skills/
+dot_claude/plugins/
+dot_codex/plugins/
+dot_local/state/dotagents-migration/

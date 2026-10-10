@@ -1,0 +1,18 @@
+{
+  "claude": {
+    "superpowers": {
+      "legacy": "superpowers@claude-plugins-official",
+      "enabled": true
+    },
+    "chrome-devtools-mcp": {
+      "legacy": "chrome-devtools-mcp@claude-plugins-official",
+      "enabled": false
+    }
+  },
+  "codex": {
+    "superpowers": {
+      "legacy": "superpowers@openai-curated",
+      "enabled": true
+    }
+  }
+}

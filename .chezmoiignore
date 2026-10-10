@@ -6,6 +6,21 @@ WARP.md
 .cursorrules
 .windsurfrules
 hooks/
+tests/
+.agents/*
+!.agents/agents.public.toml
+!.agents/client-state.public.json
+!.agents/plugin-sources/
+.agents/plugin-sources/*
+!.agents/plugin-sources/superpowers/
+!.agents/plugin-sources/chrome-devtools-mcp/
+.claude/skills/
+.codex/skills/
+.claude/plugins/
+.codex/plugins/
+.local/state/dotagents-migration/
+**/__pycache__/
+**/*.pyc
 .github/
 .gitignore
 
