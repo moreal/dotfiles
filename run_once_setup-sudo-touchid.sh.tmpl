@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+set -eu
+
+# Use sudo with Touch ID. /etc/pam.d/sudo_local survives macOS updates (Sonoma+).
+if ! grep -qs '^auth[[:space:]]\+sufficient[[:space:]]\+pam_tid\.so' /etc/pam.d/sudo_local; then
+    echo 'auth sufficient pam_tid.so' | sudo tee -a /etc/pam.d/sudo_local >/dev/null
+fi
+{{ end -}}
