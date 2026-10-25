@@ -29,6 +29,7 @@ tests/
 .gitconfig.linux
 {{ else if eq .chezmoi.os "linux" }}
 .gitconfig.macos
+Library
 {{ end }}
 
 # Local secrets - never track, even via a bulk `chezmoi add`

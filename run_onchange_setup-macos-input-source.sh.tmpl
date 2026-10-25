@@ -1,0 +1,13 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+set -eu
+
+# Switch input source with Shift+Space (61: next source),
+# and move "previous source" (60) to Shift+Option+Space so it doesn't collide.
+# Takes full effect after re-login.
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 \
+    '<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>131072</integer></array></dict></dict>'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 \
+    '<dict><key>enabled</key><true/><key>value</key><dict><key>type</key><string>standard</string><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>655360</integer></array></dict></dict>'
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u 2>/dev/null || true
+{{ end -}}
