@@ -66,6 +66,22 @@ class ClientTests(unittest.TestCase):
             module.register(home)
             self.assertEqual((home / ".codex/config.toml").read_text(), first)
 
+    def test_plugin_without_legacy_id_is_enabled_without_junk_settings(self):
+        with tempfile.TemporaryDirectory() as directory:
+            home = Path(directory)
+            (home / ".agents").mkdir()
+            (home / ".claude").mkdir()
+            state = {"claude": {"native": {"enabled": True}}}
+            (home / ".agents/client-state.json").write_text(json.dumps(state))
+            (home / ".claude/settings.json").write_text(json.dumps({"enabledPlugins": {}}))
+            spec = importlib.util.spec_from_file_location("clients", SCRIPT)
+            assert spec is not None and spec.loader is not None
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            module.register(home)
+            settings = json.loads((home / ".claude/settings.json").read_text())
+            self.assertEqual(settings["enabledPlugins"], {"native@dotagents": True})
+
 
 if __name__ == "__main__":
     unittest.main()

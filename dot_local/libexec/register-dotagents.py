@@ -30,16 +30,17 @@ def register(home, options_only=False):
     if state.get("claude") and claude_path.exists():
         settings = json.loads(claude_path.read_text())
         for name, preference in state["claude"].items():
-            old = preference["legacy"]
+            old = preference.get("legacy")
             new = f"{name}@dotagents"
             if options_only and new in settings.get("enabledPlugins", {}):
                 preference["enabled"] = settings["enabledPlugins"][new]
             options = settings.get("pluginConfigs", {})
-            if old in options and new not in options:
+            if old and old in options and new not in options:
                 options[new] = options[old]
             if not options_only:
                 enabled = settings.setdefault("enabledPlugins", {})
-                enabled[old] = False
+                if old:
+                    enabled[old] = False
                 enabled[new] = preference["enabled"]
         claude_path.write_text(json.dumps(settings, indent=2) + "\n")
 
@@ -55,7 +56,8 @@ def register(home, options_only=False):
     if not options_only and codex_path.exists():
         text = codex_path.read_text()
         for name, preference in state.get("codex", {}).items():
-            text = set_plugin_flag(text, preference["legacy"], False)
+            if preference.get("legacy"):
+                text = set_plugin_flag(text, preference["legacy"], False)
             text = set_plugin_flag(text, f"{name}@dotagents-local", preference["enabled"])
         old = str(home / ".codex/skills") + "/"
         new = str(home / ".agents/skills") + "/"
